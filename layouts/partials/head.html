@@ -28,11 +28,12 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
-{{ if and (not .Site.IsServer) .Site.GoogleAnalytics }}
-{{ partial "google_analytics.html" . }}
-{{ end }}
+{{- if .Site.Config.Services.GoogleAnalytics.ID }}
+    {{ template "_internal/google_analytics.html" . }}
+{{- end}}
 
 {{ if .Site.Params.umami.enable }}
 {{ partial "umami.html" . }}
 {{ end }}
+
 
