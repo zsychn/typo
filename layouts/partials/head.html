@@ -28,11 +28,11 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
-{{ if hugo.IsProduction }}
+{{ if not hugo.IsServer }}
 {{ template "_internal/google_analytics.html" . }}
+{{ end }}
 
 {{ if .Site.Params.umami.enable }}
 {{ partial "umami.html" . }}
-{{ end }}
 {{ end }}
 
