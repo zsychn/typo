@@ -28,7 +28,7 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
-{{ if not .Site.IsServer }}
+{{ if not site.IsServer }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
